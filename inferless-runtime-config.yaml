@@ -1,0 +1,6 @@
+build:
+  system_packages:
+    - "ffmpeg"
+  python_packages:
+    - "faster-whisper==1.0.0"
+    - "torch==2.2.1"
