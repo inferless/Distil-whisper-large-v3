@@ -1,9 +1,5 @@
-# Whisper-large-v3 with Faster-Whisper
-Whisper-large-v3 is a pre-trained model for automatic speech recognition (ASR) and speech translation. It is part of the Whisper series developed by OpenAI.
-
-## Deploy Whisper-large-v3 using Inferless:
-- Deployment of Whisper-large-v3 model using [Faster-Whisper](https://github.com/SYSTRAN/faster-whisper).
-- By using the Faster-Whisper, you can expect an average latency of 0.55 sec.
+# Distil-Whisper: distil-large-v3
+Distil-Whisper, as outlined in the paper "Robust Knowledge Distillation via Large-Scale Pseudo Labelling," represents the culmination of the Distil-Whisper English series. It's a refined version of OpenAI's Whisper large-v3, boasting superior long-form transcription accuracy with both sequential and chunked algorithms. This model performs within 1% WER of large-v3 on long-form audio tasks and surpasses distil-large-v2 by 4.8% using the sequential algorithm, all while being significantly faster.
 
 ---
 ## Prerequisites
@@ -39,42 +35,6 @@ After the create model step, while setting the configuration for the model make 
 Enter all the required details to Import your model. Refer [this link](https://docs.inferless.com/integrations/github-custom-code) for more information on model import.
 
 The following is a sample Input and Output JSON for this model which you can use while importing this model on Inferless.
-
-### Input
-```json
-{
-  "inputs": [
-    {
-      "data": [
-        "http://thepodcastexchange.ca/s/Porsche-Macan-July-5-2018-1.mp3"
-      ],
-      "name": "audio_url",
-      "shape": [
-        1
-      ],
-      "datatype": "BYTES"
-    }
-  ]
-}
-```
-
-### Output
-```json
-{
-  "outputs": [
-    {
-      "data": [
-        "data"
-      ],
-      "name": "transcribed_output",
-      "shape": [
-        1
-      ],
-      "datatype": "BYTES"
-    }
-  ]
-}
-```
 
 ---
 ## Curl Command
