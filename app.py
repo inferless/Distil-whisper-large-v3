@@ -11,7 +11,7 @@ class InferlessPythonModel:
         self.pipe = pipeline( "automatic-speech-recognition", model=model, tokenizer=processor.tokenizer, feature_extractor=processor.feature_extractor, max_new_tokens=128, torch_dtype=torch.float16, device="cuda:0", )
 
     def infer(self,inputs):
-        audio_url = inputs["prompt"]
+        audio_url = inputs["audio_url"]
         pipeline_output = self.pipe(audio_url)
          
         return { "transcribed_output" : pipeline_output["text"]}
